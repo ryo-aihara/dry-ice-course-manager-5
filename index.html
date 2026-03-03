@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dry-ice-course-manager</title>
+  <link rel="stylesheet" href="css/style.css?v=final1" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="pill" id="monthPill"></div>
+  <div class="pill" id="modePill"></div>
+  <div class="pill override" id="overridePill"></div>
+  <div class="pill" id="buildLabel"></div>
+</header>
+
+<section class="controls">
+  <div class="row">
+    <button id="bin1Btn">1便</button>
+    <button id="bin2Btn">2便</button>
+    <button id="mode25Btn">25期</button>
+    <button id="mode30Btn">30期</button>
+  </div>
+
+  <div class="row">
+    <button id="tab501">501-510</button>
+    <button id="tab601">601-619</button>
+    <button id="tab621">621-648</button>
+  </div>
+
+  <div class="row">
+    <input id="courseSearch" placeholder="course検索" />
+    <button id="clearSearch">×</button>
+  </div>
+
+  <div class="row">
+    <button id="viewCards">カード</button>
+    <button id="viewPaper">紙</button>
+    <button id="viewData">DATA</button>
+  </div>
+</section>
+
+<section class="summary">
+  <div>ドライアイス: <span id="dryCases">-</span>ケース + <span id="dryBara">-</span></div>
+  <div>蓄冷: <span id="coolCases">0</span>ケース + <span id="coolBara">0</span>枚</div>
+  <div>未振分: <span id="unassignedCount">0</span></div>
+  <div>
+    A:<span id="groupACount">0</span>
+    B:<span id="groupBCount">0</span>
+    C:<span id="groupCCount">0</span>
+    D:<span id="groupDCount">0</span>
+    E:<span id="groupECount">0</span>
+  </div>
+</section>
+
+<section class="selectionBar">
+  <button id="btnSelectAllVisible">表示を全選択</button>
+  <button id="btnSelectNone">解除</button>
+  <button id="btnRangeSelect">範囲選択</button>
+  <button id="btnDeleteSelected">削除</button>
+  <button id="btnMoveUnassigned">未振分へ</button>
+
+  <button data-move="A">Aへ</button>
+  <button data-move="B">Bへ</button>
+  <button data-move="C">Cへ</button>
+  <button data-move="D">Dへ</button>
+  <button data-move="E">Eへ</button>
+</section>
+
+<section class="csvArea">
+  <textarea id="csvInput" placeholder="CSV貼り付け"></textarea>
+  <button id="applyCSV">反映</button>
+  <button id="clearCSV">クリア</button>
+</section>
+
+<section class="actions">
+  <button id="addGroupBtn">グループ追加</button>
+  <button id="addCourseBtn">コース追加</button>
+  <button id="paperChecklistToggle">紙チェック保存</button>
+
+  <!-- app.js用の存在確認要素 -->
+  <div id="paperGrid" style="display:none"></div>
+  <div id="dataMode" style="display:none"></div>
+  <div id="dataBin" style="display:none"></div>
+  <div id="dataCode" style="display:none"></div>
+</section>
+
+<section class="content"></section>
+
+<script src="js/app.js?v=final1"></script>
+</body>
+</html>
